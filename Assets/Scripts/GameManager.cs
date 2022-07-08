@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager Instance;
     void Awake()
@@ -14,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerGetHit(float value)
     {
+        if (!photonView.IsMine) return;
         Debug.Log("playerHealth--");
     }
 }

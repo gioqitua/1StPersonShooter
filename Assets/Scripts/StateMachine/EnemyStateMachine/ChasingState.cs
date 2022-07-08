@@ -8,6 +8,7 @@ public class ChasingState : EnemyBaseState
     public override void Enter()
     {
         stateMachine.anim.SetBool("Run", true); 
+        stateMachine.navmeshAgent.ResetPath();
     }
 
     public override void Tick(float deltaTime)

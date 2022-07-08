@@ -1898,12 +1898,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f4ecaae29788c4986d0af16a5b181f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 15
   bloodEffect: {fileID: 331441110373972561, guid: b53e552cf22b34d43b542aed8a60a89b, type: 3}
   navmeshAgent: {fileID: 4244043164063238275}
   chasingRadius: 15
   lookRadius: 20
-  attackRange: 2
+  attackRange: 3
   anim: {fileID: 3574502415987623157}
   playerPos: {fileID: 0}
 --- !u!195 &4244043164063238275

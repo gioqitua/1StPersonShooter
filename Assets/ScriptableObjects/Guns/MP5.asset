@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda01b98c870d5e43af1effdf3d431cf, type: 3}
+  m_Name: MP5
+  m_EditorClassIdentifier: 
+  GunPrefab: {fileID: 4058477870819327784, guid: 55946033b6ac12845a092866615e779a, type: 3}
+  bulletHolePrefab: {fileID: 932175098438899771, guid: 46c307738157ac145a9e681371b4ca3a, type: 3}
+  bulletImpactFX: {fileID: 11544831999490930, guid: bf06921575f3cb04ba50fee2aff53ca4, type: 3}
+  ShootDelay: 0.05
+  aimSpeed: 15
+  damagePerBullet: 1
+  bloom: 20
+  recoilX: -5
+  recoilY: 2
+  recoilZ: 0.1
+  kickback: 0.01
+  reloadSpeed: 1
+  shootDistance: 2000
+  stashSize: 180
+  clipSize: 30
+  recoilReturnSpeed: 15
+  recoilSnappiness: 5

@@ -1,4 +1,6 @@
- 
+
+
+using UnityEngine;
 
 public class MoveState : PlayerBaseState
 {
@@ -8,26 +10,26 @@ public class MoveState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.inputReader.RunEvent += Run;
-        stateMachine.inputReader.FireEvent += Fire;
-    }
-    void Fire()
-    {
-        stateMachine.Shoot();
-    }
-    private void Run()
-    {
-        stateMachine.moveSpeed *= 1.5f;
+
     }
 
     public override void Tick(float deltaTime)
     {
+        stateMachine.Shoot();
 
+        if (stateMachine.inputReader.runPressed && stateMachine.IsMovingForward())
+        {
+            stateMachine.SwitchState(new SprintState(stateMachine));
+        }
+        if (stateMachine.inputReader.aimPressed)
+        {
+            stateMachine.SwitchState(new AimState(stateMachine));
+        }
+        stateMachine.SetNormalCamFOV();
     }
     public override void Exit()
     {
-        stateMachine.inputReader.RunEvent -= Run;
-        stateMachine.inputReader.FireEvent -= Fire;
+
     }
 
 }

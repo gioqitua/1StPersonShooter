@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class EnemyStateMachine : StateMachine, IDamagable
 {
-    public float health = 100f;
+    public int health = 15;
     internal float damagePerHit = 15f;
     public ParticleSystem bloodEffect;
     public NavMeshAgent navmeshAgent;
@@ -16,15 +16,14 @@ public class EnemyStateMachine : StateMachine, IDamagable
     public event Action attackComplete;
     private void Start()
     {
+        playerPos = GameObject.Find("Player").transform;
         navmeshAgent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         SwitchState(new RoamingState(this));
     }
-    public void TakeDamage(float value, Vector3 hitPoint)
+    public void TakeDamage(int value)
     {
         health -= value;
-
-        Instantiate(bloodEffect, hitPoint, Quaternion.identity);
 
         if (health <= 0)
         {
